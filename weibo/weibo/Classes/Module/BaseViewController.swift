@@ -1,18 +1,43 @@
 //
-//  ProfileTableViewController.swift
-//  weibo1
+//  BaseViewController.swift
+//  weibo
 //
-//  Created by 杨晓晨 on 15/10/7.
+//  Created by 杨晓晨 on 15/10/9.
 //  Copyright © 2015年 yangxiaochen. All rights reserved.
 //
 
 import UIKit
 
-class ProfileTableViewController: BaseViewController {
-
+class BaseViewController: UITableViewController, VisitNotLoginViewDelegate {
+    var isLogin: Bool = false
+    var visitView: VisitNotLoginView?
+    
+    func enterLogin() {
+        
+    }
+    
+    func enterRegister() {
+        
+    }
+    
+    override func loadView() {
+        isLogin ? super.loadView() : setVisitView()
+    }
+    
+    func setVisitView() {
+        visitView = VisitNotLoginView()
+        visitView?.delegater = self
+        view = visitView
+        // 设置状态栏
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: "visitorLoginViewWillRegister")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: "visitorLoginViewWillLogin")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        visitView?.setupViewInfo(false, imageName: "visitordiscover_image_profile", message: "登录后，你的微博、相册、个人资料会显示在这里，展示给别人")
+        
+
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

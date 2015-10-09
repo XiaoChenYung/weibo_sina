@@ -8,11 +8,11 @@
 
 import UIKit
 
-class HomeTableViewController: UITableViewController {
+class HomeTableViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        visitView?.setupViewInfo(true, imageName: "visitordiscover_feed_image_smallicon", message: "关注一些人，回这里看看有什么惊喜")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

@@ -11,8 +11,9 @@ import UIKit
 class MainViewController: UITabBarController {
 
     override func viewDidLoad() {
-        tabBar.addSubview(composeBtn)
+        
         super.viewDidLoad()
+        
         addChildViewController(HomeTableViewController(), title: "首页", imageString: "tabbar_home")
         addChildViewController(MessageTableViewController(), title: "消息", imageString: "tabbar_message_center")
         addChildViewController(UIViewController())
@@ -20,10 +21,12 @@ class MainViewController: UITabBarController {
         addChildViewController(ProfileTableViewController(), title: "我的", imageString: "tabbar_profile")
         // Do any additional setup after loading the view.
     }
-    
-//    override func layoutSublayersOfLayer(layer: CALayer) {
-//        <#code#>
-//    }
+    override func viewWillLayoutSubviews() {
+        tabBar.addSubview(composeBtn)
+        let w = tabBar.bounds.width/5.0
+        let rect = CGRect(x: w*2, y: 0, width: w, height: tabBar.bounds.height)
+        composeBtn.frame = rect
+    }
     
     private func addChildViewController(childController: UIViewController, title: String, imageString: String ) {
         tabBar.tintColor = UIColor.orangeColor()
@@ -36,13 +39,20 @@ class MainViewController: UITabBarController {
     
     lazy var composeBtn: UIButton = {
         let btn = UIButton()
+        btn.userInteractionEnabled = true
         btn.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: UIControlState.Normal)
         btn.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: UIControlState.Highlighted)
         
         btn.setImage(UIImage(named: "tabbar_compose_icon_add"), forState: UIControlState.Normal)
         btn.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), forState: UIControlState.Highlighted)
+        
+        btn.addTarget(self, action: "clickBtn", forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
+    
+    func clickBtn() {
+        print("beidianla")
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
