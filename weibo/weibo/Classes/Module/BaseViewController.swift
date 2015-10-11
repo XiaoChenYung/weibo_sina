@@ -10,10 +10,11 @@ import UIKit
 
 class BaseViewController: UITableViewController, VisitNotLoginViewDelegate {
     var isLogin: Bool = false
-    var visitView: VisitNotLoginView?
+    lazy var visitView: VisitNotLoginView = VisitNotLoginView()
     
     func enterLogin() {
-        
+        let nav = UINavigationController(rootViewController: OAuthController())
+        presentViewController(nav, animated: true, completion: nil)
     }
     
     func enterRegister() {
@@ -25,12 +26,12 @@ class BaseViewController: UITableViewController, VisitNotLoginViewDelegate {
     }
     
     func setVisitView() {
-        visitView = VisitNotLoginView()
-        visitView?.delegater = self
+       // visitView = VisitNotLoginView()
+        visitView.delegater = self
         view = visitView
         // 设置状态栏
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: "visitorLoginViewWillRegister")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: "visitorLoginViewWillLogin")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: "enterRegister")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: "enterLogin")
     }
     
     override func viewDidLoad() {

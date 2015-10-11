@@ -17,6 +17,8 @@
 		4AB41DA51BC7D63300DC94FA /* NetTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB41DA41BC7D63300DC94FA /* NetTools.swift */; settings = {ASSET_TAGS = (); }; };
 		4AB41DA71BC7DA0600DC94FA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB41DA61BC7DA0600DC94FA /* BaseViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		4AB41DA91BC7DBF600DC94FA /* VisitNotLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB41DA81BC7DBF600DC94FA /* VisitNotLoginView.swift */; settings = {ASSET_TAGS = (); }; };
+		4ACF2DFA1BC80C5200446F49 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF2DF91BC80C5200446F49 /* UserAccount.swift */; settings = {ASSET_TAGS = (); }; };
+		4ACF2DFD1BC80E9700446F49 /* OAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF2DFC1BC80E9700446F49 /* OAuthController.swift */; settings = {ASSET_TAGS = (); }; };
 		7EB2C8296667AB761BCF2B84 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD64CCC3F0280C54719D7847 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		4AB41DA41BC7D63300DC94FA /* NetTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetTools.swift; sourceTree = "<group>"; };
 		4AB41DA61BC7DA0600DC94FA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4AB41DA81BC7DBF600DC94FA /* VisitNotLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitNotLoginView.swift; sourceTree = "<group>"; };
+		4ACF2DF91BC80C5200446F49 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		4ACF2DFC1BC80E9700446F49 /* OAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthController.swift; sourceTree = "<group>"; };
 		7401FA4330A6114D4A543510 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DD64CCC3F0280C54719D7847 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,6 +96,7 @@
 		4A4C5B641BC64FC7003AEB14 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4ACF2DF91BC80C5200446F49 /* UserAccount.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 		4A4C5B651BC64FC7003AEB14 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				4ACF2DFB1BC80E3E00446F49 /* OAuth */,
 				4A4C5B741BC64FFC003AEB14 /* Discover */,
 				4A4C5B751BC65004003AEB14 /* Home */,
 				4A4C5B711BC64FE4003AEB14 /* Main */,
@@ -156,6 +162,14 @@
 				4A4C5B671BC64FC7003AEB14 /* HomeTableViewController.swift */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		4ACF2DFB1BC80E3E00446F49 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				4ACF2DFC1BC80E9700446F49 /* OAuthController.swift */,
+			);
+			name = OAuth;
 			sourceTree = "<group>";
 		};
 		5BFF01E368DBDA8C5E299392 /* Pods */ = {
@@ -299,8 +313,10 @@
 				4A4C5B701BC64FC7003AEB14 /* ProfileTableViewController.swift in Sources */,
 				4A4C5B6D1BC64FC7003AEB14 /* HomeTableViewController.swift in Sources */,
 				4A4C5B6C1BC64FC7003AEB14 /* DiscoverTableViewController.swift in Sources */,
+				4ACF2DFA1BC80C5200446F49 /* UserAccount.swift in Sources */,
 				4A4C5B6F1BC64FC7003AEB14 /* MessageTableViewController.swift in Sources */,
 				4AB41DA71BC7DA0600DC94FA /* BaseViewController.swift in Sources */,
+				4ACF2DFD1BC80E9700446F49 /* OAuthController.swift in Sources */,
 				4A4C5B521BC64EB7003AEB14 /* AppDelegate.swift in Sources */,
 				4A4C5B6E1BC64FC7003AEB14 /* MainViewController.swift in Sources */,
 				4AB41DA91BC7DBF600DC94FA /* VisitNotLoginView.swift in Sources */,
