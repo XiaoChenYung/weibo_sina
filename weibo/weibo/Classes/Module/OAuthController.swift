@@ -77,6 +77,9 @@ class OAuthController: UIViewController, UIWebViewDelegate {
                 print("网络错误")
                 return
             }
+            // 发送通知切换视图控制器
+            NSNotificationCenter.defaultCenter().postNotificationName(YCRootViewControllerSwitchNotification, object: false)
+            self.close()
            })
         }
     }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+let YCRootViewControllerSwitchNotification = "YCRootViewControllerSwitchNotification"
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,16 +16,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         setupAppearance()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchViewController:", name: YCRootViewControllerSwitchNotification, object: nil)
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window?.rootViewController = MainViewController()
+        window?.rootViewController = defaultViewController()
         window?.makeKeyAndVisible()
         // Override point for customization after application launch.
         return true
+    }
+    /// 程序被销毁才会执行
+    deinit {
+        // 注销通知 - 只是一个习惯
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    /// 切换控制器，记住：一定在 AppDelegate 中统一修改！
+    func switchViewController(n: NSNotification) {
+        print("切换控制器 \(n)")
+        let mainVC = n.object as! Bool
+        
+        window?.rootViewController = mainVC ? MainViewController() : WelcomeController()
     }
     
     private func setupAppearance() {
         UINavigationBar.appearance().tintColor = UIColor.orangeColor()
         UITabBar.appearance().tintColor = UIColor.orangeColor()
+    }
+    
+    /// 返回启动默认的控制器
+    private func defaultViewController() -> UIViewController {
+        
+        // 1. 判断用户是否登录，如果没有登录返回主控制器
+        if !UserAccount.userLogon {
+            return MainViewController()
+        }
+        
+        // 2. 判断是否新版本，如果是，返回新特性，否则返回欢迎
+        return isNewUpdate() ? NewFeatureController() : WelcomeController()
+    }
+    
+    /// 检查是否有新版本
+    private func isNewUpdate() -> Bool {
+        // 1. 获取程序当前的版本
+        let currentVersion = Double(NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String)!
+        
+        // 2. 获取程序`之前`的版本，偏好设置
+        let sandboxVersionKey = "sandboxVersionKey"
+        let sandboxVersion = NSUserDefaults.standardUserDefaults().doubleForKey(sandboxVersionKey)
+        
+        // 3. 将当前版本保存到偏好设置
+        NSUserDefaults.standardUserDefaults().setDouble(currentVersion, forKey: sandboxVersionKey)
+        // iOS 7.0 之后，就不需要同步了，iOS 6.0 之前，如果不同步不会第一时间写入沙盒
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
+        // 4. 返回比较结果
+        return currentVersion > sandboxVersion
     }
     
     func applicationWillResignActive(application: UIApplication) {

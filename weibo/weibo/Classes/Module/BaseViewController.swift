@@ -9,7 +9,7 @@
 import UIKit
 
 class BaseViewController: UITableViewController, VisitNotLoginViewDelegate {
-    var isLogin: Bool = false
+    var isLogin: Bool = UserAccount.userLogon
     lazy var visitView: VisitNotLoginView = VisitNotLoginView()
     
     func enterLogin() {

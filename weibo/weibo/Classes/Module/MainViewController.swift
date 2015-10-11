@@ -27,6 +27,10 @@ class MainViewController: UITabBarController {
         let rect = CGRect(x: w*2, y: 0, width: w, height: tabBar.bounds.height)
         composeBtn.frame = rect
     }
+
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        print(event)
+    }
     
     private func addChildViewController(childController: UIViewController, title: String, imageString: String ) {
         tabBar.tintColor = UIColor.orangeColor()

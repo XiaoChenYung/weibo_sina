@@ -10,6 +10,10 @@ import UIKit
 
 /// 用户模型
 class UserAccount: NSObject {
+    /// 用户是否登录标记
+    class var userLogon: Bool {
+        return loadAccount() != nil
+    }
     ///用户账户属性
     private static var userAccount: UserAccount?
     /// 用于调用access_token，接口获取授权后的access token

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A24FC061BCA05850077C132 /* NewFeatureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24FC051BCA05850077C132 /* NewFeatureController.swift */; settings = {ASSET_TAGS = (); }; };
 		4A4C5B521BC64EB7003AEB14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C5B511BC64EB7003AEB14 /* AppDelegate.swift */; };
 		4A4C5B591BC64EB7003AEB14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A4C5B581BC64EB7003AEB14 /* Assets.xcassets */; };
 		4A4C5B6C1BC64FC7003AEB14 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C5B661BC64FC7003AEB14 /* DiscoverTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -19,11 +20,13 @@
 		4AB41DA91BC7DBF600DC94FA /* VisitNotLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB41DA81BC7DBF600DC94FA /* VisitNotLoginView.swift */; settings = {ASSET_TAGS = (); }; };
 		4ACF2DFA1BC80C5200446F49 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF2DF91BC80C5200446F49 /* UserAccount.swift */; settings = {ASSET_TAGS = (); }; };
 		4ACF2DFD1BC80E9700446F49 /* OAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACF2DFC1BC80E9700446F49 /* OAuthController.swift */; settings = {ASSET_TAGS = (); }; };
+		4ADDC7AC1BC9F5A200254238 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADDC7AB1BC9F5A200254238 /* WelcomeController.swift */; settings = {ASSET_TAGS = (); }; };
 		7EB2C8296667AB761BCF2B84 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD64CCC3F0280C54719D7847 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		042305CC4F1B07A2181C89B3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		4A24FC051BCA05850077C132 /* NewFeatureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureController.swift; sourceTree = "<group>"; };
 		4A4C5B4E1BC64EB7003AEB14 /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A4C5B511BC64EB7003AEB14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A4C5B581BC64EB7003AEB14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		4AB41DA81BC7DBF600DC94FA /* VisitNotLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitNotLoginView.swift; sourceTree = "<group>"; };
 		4ACF2DF91BC80C5200446F49 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		4ACF2DFC1BC80E9700446F49 /* OAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthController.swift; sourceTree = "<group>"; };
+		4ADDC7AB1BC9F5A200254238 /* WelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		7401FA4330A6114D4A543510 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DD64CCC3F0280C54719D7847 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +108,7 @@
 		4A4C5B651BC64FC7003AEB14 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				4ADDC7AA1BC9F57500254238 /* Newfeature */,
 				4ACF2DFB1BC80E3E00446F49 /* OAuth */,
 				4A4C5B741BC64FFC003AEB14 /* Discover */,
 				4A4C5B751BC65004003AEB14 /* Home */,
@@ -172,6 +177,15 @@
 			name = OAuth;
 			sourceTree = "<group>";
 		};
+		4ADDC7AA1BC9F57500254238 /* Newfeature */ = {
+			isa = PBXGroup;
+			children = (
+				4ADDC7AB1BC9F5A200254238 /* WelcomeController.swift */,
+				4A24FC051BCA05850077C132 /* NewFeatureController.swift */,
+			);
+			name = Newfeature;
+			sourceTree = "<group>";
+		};
 		5BFF01E368DBDA8C5E299392 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +216,7 @@
 				4A4C5B4C1BC64EB7003AEB14 /* Resources */,
 				B5D825642FFEACC5C1F38E7C /* Embed Pods Frameworks */,
 				6B2C186D3746FDBCFDEE5668 /* Copy Pods Resources */,
+				4A79BACE1BCA473100B334D2 /* TODO */,
 			);
 			buildRules = (
 			);
@@ -257,6 +272,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4A79BACE1BCA473100B334D2 /* TODO */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = TODO;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\necho \"searching ${SRCROOT} for ${TAGS}\"\nfind \"${SRCROOT}\" \\( -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
+		};
 		6B2C186D3746FDBCFDEE5668 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,7 +343,9 @@
 				4A4C5B6D1BC64FC7003AEB14 /* HomeTableViewController.swift in Sources */,
 				4A4C5B6C1BC64FC7003AEB14 /* DiscoverTableViewController.swift in Sources */,
 				4ACF2DFA1BC80C5200446F49 /* UserAccount.swift in Sources */,
+				4A24FC061BCA05850077C132 /* NewFeatureController.swift in Sources */,
 				4A4C5B6F1BC64FC7003AEB14 /* MessageTableViewController.swift in Sources */,
+				4ADDC7AC1BC9F5A200254238 /* WelcomeController.swift in Sources */,
 				4AB41DA71BC7DA0600DC94FA /* BaseViewController.swift in Sources */,
 				4ACF2DFD1BC80E9700446F49 /* OAuthController.swift in Sources */,
 				4A4C5B521BC64EB7003AEB14 /* AppDelegate.swift in Sources */,
