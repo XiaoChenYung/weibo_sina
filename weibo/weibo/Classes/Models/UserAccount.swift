@@ -17,11 +17,11 @@ class UserAccount: NSObject {
     /// access_token的生命周期，单位是秒数 - 准确的数据类型是`数值`
     var expires_in: NSTimeInterval = 0 {
         didSet {
-            sepiredDate = NSDate(timeIntervalSinceNow: expires_in)
+            expiresDate = NSDate(timeIntervalSinceNow: expires_in)
         }
     }
     /// 过期日期
-    var sepiredDate: NSDate?
+    var expiresDate: NSDate?
     /// 当前授权用户的UID
     var uid: String?
     ///昵称
@@ -68,7 +68,7 @@ class UserAccount: NSObject {
         if userAccount == nil {
             userAccount = NSKeyedUnarchiver.unarchiveObjectWithFile(accountPath) as? UserAccount
         }
-        if let date = userAccount?.sepiredDate where date.compare(NSDate()) == NSComparisonResult.OrderedAscending {
+        if let date = userAccount?.expiresDate where date.compare(NSDate()) == NSComparisonResult.OrderedAscending {
             userAccount = nil
         }
         return userAccount
@@ -76,7 +76,7 @@ class UserAccount: NSObject {
     
     /// 对象描述信息
     override var description: String {
-        let properties = ["access_token", "expires_in", "uid"]
+        let properties = ["access_token", "expires_in", "uid", "expiresDate", "name", "avatar_large"]
         
         return "\(dictionaryWithValuesForKeys(properties))"
     }
@@ -85,7 +85,7 @@ class UserAccount: NSObject {
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(access_token, forKey: "access_token")
         aCoder.encodeDouble(expires_in, forKey: "expires_in")
-        aCoder.encodeObject(sepiredDate, forKey: "expiresDate")
+        aCoder.encodeObject(expiresDate, forKey: "expiresDate")
         aCoder.encodeObject(uid, forKey: "uid")
         aCoder.encodeObject(name, forKey: "name")
         aCoder.encodeObject(avatar_large, forKey: "avatar_large")
@@ -95,7 +95,7 @@ class UserAccount: NSObject {
     required init?(coder aDecoder: NSCoder) {
         access_token = aDecoder.decodeObjectForKey("access_token") as? String
         expires_in = aDecoder.decodeDoubleForKey("expires_in")
-        sepiredDate = aDecoder.decodeObjectForKey("expiresDate") as? NSDate
+        expiresDate = aDecoder.decodeObjectForKey("expiresDate") as? NSDate
         uid = aDecoder.decodeObjectForKey("uid") as? String
         name = aDecoder.decodeObjectForKey("name") as? String
         avatar_large = aDecoder.decodeObjectForKey("avatar_large") as? String
