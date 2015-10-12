@@ -15,6 +15,10 @@
 		4A4C5B6E1BC64FC7003AEB14 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C5B681BC64FC7003AEB14 /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		4A4C5B6F1BC64FC7003AEB14 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C5B691BC64FC7003AEB14 /* MessageTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		4A4C5B701BC64FC7003AEB14 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C5B6A1BC64FC7003AEB14 /* ProfileTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4A79BAD01BCA622100B334D2 /* HotWeibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A79BACF1BCA622100B334D2 /* HotWeibo.swift */; settings = {ASSET_TAGS = (); }; };
+		4A88AD461BCBC54E006EF330 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A88AD431BCBC54E006EF330 /* UIButton+Extension.swift */; settings = {ASSET_TAGS = (); }; };
+		4A88AD471BCBC54E006EF330 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A88AD441BCBC54E006EF330 /* UILabel+Extension.swift */; settings = {ASSET_TAGS = (); }; };
+		4A88AD481BCBC54E006EF330 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A88AD451BCBC54E006EF330 /* UIView+AutoLayout.swift */; settings = {ASSET_TAGS = (); }; };
 		4AB41DA51BC7D63300DC94FA /* NetTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB41DA41BC7D63300DC94FA /* NetTools.swift */; settings = {ASSET_TAGS = (); }; };
 		4AB41DA71BC7DA0600DC94FA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB41DA61BC7DA0600DC94FA /* BaseViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		4AB41DA91BC7DBF600DC94FA /* VisitNotLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB41DA81BC7DBF600DC94FA /* VisitNotLoginView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -36,6 +40,10 @@
 		4A4C5B681BC64FC7003AEB14 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4A4C5B691BC64FC7003AEB14 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		4A4C5B6A1BC64FC7003AEB14 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		4A79BACF1BCA622100B334D2 /* HotWeibo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotWeibo.swift; sourceTree = "<group>"; };
+		4A88AD431BCBC54E006EF330 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		4A88AD441BCBC54E006EF330 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		4A88AD451BCBC54E006EF330 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		4AB41DA41BC7D63300DC94FA /* NetTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetTools.swift; sourceTree = "<group>"; };
 		4AB41DA61BC7DA0600DC94FA /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4AB41DA81BC7DBF600DC94FA /* VisitNotLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitNotLoginView.swift; sourceTree = "<group>"; };
@@ -122,6 +130,9 @@
 		4A4C5B6B1BC64FC7003AEB14 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4A88AD431BCBC54E006EF330 /* UIButton+Extension.swift */,
+				4A88AD441BCBC54E006EF330 /* UILabel+Extension.swift */,
+				4A88AD451BCBC54E006EF330 /* UIView+AutoLayout.swift */,
 				4AB41DA41BC7D63300DC94FA /* NetTools.swift */,
 			);
 			path = Tools;
@@ -157,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				4A4C5B661BC64FC7003AEB14 /* DiscoverTableViewController.swift */,
+				4A79BACF1BCA622100B334D2 /* HotWeibo.swift */,
 			);
 			name = Discover;
 			sourceTree = "<group>";
@@ -339,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB41DA51BC7D63300DC94FA /* NetTools.swift in Sources */,
+				4A88AD481BCBC54E006EF330 /* UIView+AutoLayout.swift in Sources */,
 				4A4C5B701BC64FC7003AEB14 /* ProfileTableViewController.swift in Sources */,
 				4A4C5B6D1BC64FC7003AEB14 /* HomeTableViewController.swift in Sources */,
 				4A4C5B6C1BC64FC7003AEB14 /* DiscoverTableViewController.swift in Sources */,
@@ -346,6 +359,9 @@
 				4A24FC061BCA05850077C132 /* NewFeatureController.swift in Sources */,
 				4A4C5B6F1BC64FC7003AEB14 /* MessageTableViewController.swift in Sources */,
 				4ADDC7AC1BC9F5A200254238 /* WelcomeController.swift in Sources */,
+				4A88AD471BCBC54E006EF330 /* UILabel+Extension.swift in Sources */,
+				4A88AD461BCBC54E006EF330 /* UIButton+Extension.swift in Sources */,
+				4A79BAD01BCA622100B334D2 /* HotWeibo.swift in Sources */,
 				4AB41DA71BC7DA0600DC94FA /* BaseViewController.swift in Sources */,
 				4ACF2DFD1BC80E9700446F49 /* OAuthController.swift in Sources */,
 				4A4C5B521BC64EB7003AEB14 /* AppDelegate.swift in Sources */,

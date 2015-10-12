@@ -32,7 +32,6 @@ class UserAccount: NSObject {
     var name: String?
     ///用户头像
     var avatar_large: String?
-    
     func loadUserInfo(finished: (error: NSError?) -> ()) {
         NetTools.shareTools.loadUserInfo(uid!) { (result, error) -> () in
             if error != nil {

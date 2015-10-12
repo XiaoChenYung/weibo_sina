@@ -32,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func switchViewController(n: NSNotification) {
         print("切换控制器 \(n)")
         let mainVC = n.object as! Bool
-        
         window?.rootViewController = mainVC ? MainViewController() : WelcomeController()
     }
     
@@ -56,19 +55,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// 检查是否有新版本
     private func isNewUpdate() -> Bool {
         // 1. 获取程序当前的版本
-        let currentVersion = Double(NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String)!
+        let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
         
         // 2. 获取程序`之前`的版本，偏好设置
         let sandboxVersionKey = "sandboxVersionKey"
-        let sandboxVersion = NSUserDefaults.standardUserDefaults().doubleForKey(sandboxVersionKey)
+        let sandboxVersion = NSUserDefaults.standardUserDefaults().stringForKey(sandboxVersionKey)
         
         // 3. 将当前版本保存到偏好设置
-        NSUserDefaults.standardUserDefaults().setDouble(currentVersion, forKey: sandboxVersionKey)
+        NSUserDefaults.standardUserDefaults().setValue(currentVersion, forKey: sandboxVersionKey)
         // iOS 7.0 之后，就不需要同步了，iOS 6.0 之前，如果不同步不会第一时间写入沙盒
         NSUserDefaults.standardUserDefaults().synchronize()
-        
+        if sandboxVersion == nil {
+            return true
+        }
         // 4. 返回比较结果
-        return currentVersion > sandboxVersion
+        let result = currentVersion.compare(sandboxVersion!)
+        return result == NSComparisonResult.OrderedDescending
     }
     
     func applicationWillResignActive(application: UIApplication) {

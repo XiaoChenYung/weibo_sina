@@ -75,7 +75,7 @@ class NetTools:  AFHTTPSessionManager {
     /// :param: urlString URL 地址
     /// :param: params    参数字典
     /// :param: finished  完成回调
-    private func requestGET(urlString: String, params: [String: AnyObject], finished: YCNetFinishedCallBack) {
+    func requestGET(urlString: String, params: [String: AnyObject], finished: YCNetFinishedCallBack) {
         
         GET(urlString, parameters: params, success: { (_, JSON) -> Void in
             
