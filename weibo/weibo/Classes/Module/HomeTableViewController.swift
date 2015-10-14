@@ -9,15 +9,36 @@
 import UIKit
 
 class HomeTableViewController: BaseViewController {
-
+    var statuses: [Status]? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "狗仔私人微博"
+        navigationController?.navigationBar.tintColor = UIColor.orangeColor()
+        // 设置表格的预估行高(方便表格提前计算预估行高，提高性能)
+        tableView.estimatedRowHeight = 200
+        // 设置表格自动计算行高
+        tableView.rowHeight = UITableViewAutomaticDimension
+        // 取消分割线
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.registerClass(StatusCell.self, forCellReuseIdentifier: "Cell")
+        
         visitView.setupViewInfo(true, imageName: "visitordiscover_feed_image_smallicon", message: "关注一些人，回这里看看有什么惊喜")
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        Status.loadStatus { [weak self](dataList, error) -> () in
+            if error != nil {
+                print("微博数组没有拿到")
+                
+                print(error)
+                return
+            }
+            self?.statuses = dataList
+            self!.tableView.reloadData()
+            //print(self?.statuses)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,25 +48,19 @@ class HomeTableViewController: BaseViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return (statuses?.count) ?? 0
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! StatusCell
+        cell.status = statuses![indexPath.row]
+        
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

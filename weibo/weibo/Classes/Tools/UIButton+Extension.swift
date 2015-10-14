@@ -10,7 +10,7 @@ import UIKit
 
 extension UIButton {
     
-    convenience init(title: String, imageName: String, fontSize: CGFloat = 12, color: UIColor = UIColor.darkGrayColor()) {
+    convenience init(title: String, imageName: String, fontSize: CGFloat = 14, color: UIColor = UIColor.darkGrayColor()) {
         
         self.init()
         

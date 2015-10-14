@@ -36,7 +36,7 @@ class OAuthController: UIViewController, UIWebViewDelegate {
         
         let urlString = request.URL!.absoluteString
         // 判断是否包含回调地址
-        if !urlString.hasPrefix(NetTools.shareTools.redirectUri) {
+        if !urlString.hasPrefix(redirectUri) {
             return true
         }
         
